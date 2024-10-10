@@ -23,7 +23,7 @@ namespace ManagementSystem.Controllers.V1.CategoryControllers
             Summary = "Update category information",
             Description = "Updates the details of an existing category identified by the provided ID."
         )]
-        public async Task<IActionResult> Update(int id, CategoryDTO guestDto)
+        public async Task<IActionResult> Update(int id, CategoryDTO categoryDTO)
         {
             // Validate the model state; return BadRequest if invalid
             if (!ModelState.IsValid)
@@ -38,9 +38,9 @@ namespace ManagementSystem.Controllers.V1.CategoryControllers
                 return NotFound(); // Return NotFound if the category does not exist
             }
 
-            // Update category properties with the new data from guestDto
-            existCategory.Name = guestDto.Name;
-            existCategory.Description = guestDto.Description;
+            // Update category properties with the new data from categoryDTO
+            existCategory.Name = categoryDTO.Name;
+            existCategory.Description = categoryDTO.Description;
             // Call the repository to update the category record
             await _categoryRepository.Update(existCategory);
 

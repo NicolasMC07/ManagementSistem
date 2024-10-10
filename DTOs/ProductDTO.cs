@@ -13,7 +13,7 @@ namespace ManagementSystem.DTOs
         [StringLength(500)]
         public string Description { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         [Required]
         public int CategoryId { get; set; }
     }
