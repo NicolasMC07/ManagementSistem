@@ -28,7 +28,7 @@ namespace ManagementSystem.Models
 
         public Product(string name, string description, double price, int categoryId)
         {
-            Name = name; Description = description; Price = price; CategoryId = categoryId;
+            Name = name.ToLower().Trim(); Description = description.ToLower().Trim(); Price = price; CategoryId = categoryId;
         }
 
         public Product()
