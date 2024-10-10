@@ -21,10 +21,10 @@ namespace ManagementSystem.Models
         [Column("description")]
         public string? Description { get; set; }
 
-        public Category(int id, string name, string description)
+        public Category(string name, string description)
         {
-            Name = name; 
-            Description = description;
+            Name = name.ToLower().Trim(); 
+            Description = description.ToLower().Trim();
         }
 
         public Category()
