@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ManagementSystem.Models;
+using ManagementSystem.Seeders;
 using Microsoft.EntityFrameworkCore;
 
 namespace ManagementSystem.Data
@@ -21,6 +22,9 @@ namespace ManagementSystem.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            CategorySeeder.Seed(modelBuilder);
+            
 
         }
 
