@@ -1,5 +1,7 @@
 using DotNetEnv;
 using ManagementSystem.Data;
+using ManagementSystem.Repositories;
+using ManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +26,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Register repositories with dependency injection
+builder.Services.AddScoped<ICategoryRepository, CategoryService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
