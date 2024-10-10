@@ -9,9 +9,9 @@ namespace ManagementSystem.Repositories
     public interface ICategoryRepository
     {
         Task<IEnumerable<Category>> GetAll();
-        Task<Category> GetById(int id);
-        Task<Category> Create(Category category);
-        Task<Category> Update(Category category);
+        Task<Category?> GetById(int id);
+        Task Create(Category category);
+        Task Update(Category category);
         Task Delete(int id);
     }
 }
